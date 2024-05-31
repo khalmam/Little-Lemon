@@ -1,0 +1,1 @@
+This project is a capstone of all the basics I have learned in Django
