@@ -4,17 +4,17 @@ from django.db import models
 
 
 class Booking(models.Model):
-    id = models.IntegerField(max_length=11)
+    id = models.IntegerField()
     name = models.CharField(max_length=255)
-    no_of_guests = models.IntegerField(max_length=6)
+    no_of_guests = models.IntegerField()
     bokingdate = models.DateField()
 
     
     
 class Menu(models.Model):
-    id = models.IntegerField(max_length=6)
+    id = models.IntegerField()
     title = models.CharField(max_length=255)
-    price = models.DecimalField(10,2)
-    inventory = models.IntegerField(max_length=5)
+    price = models.DecimalField(max_digits=10, decimal_places=2,)
+    inventory = models.IntegerField()
 
     
