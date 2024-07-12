@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
 from .models import MenuItem
+from rest_framework import viewsets
 from.serializers import MenuItemSerializer
 from rest_framework.permissions import IsAuthenticated
 from .serializers import BookingSerializer, MenuSerializer
@@ -15,15 +16,15 @@ def index(request):
 def sayHello(request):
  return HttpResponse('Hello World')
 
-class MenuItemsView(generics.ListCreateAPIView):
-    queryset = MenuItem.objects.all()
-    serializer_class = MenuItemSerializer
+#class MenuItemsView(generics.ListCreateAPIView):
+#    queryset = MenuItem.objects.all()
+#    serializer_class = MenuItemSerializer
 
 
 
-class SingleMenuItemView(generics.RetrieveUpdateAPIView,generics.DestroyAPIView):
-     queryset = MenuItem.objects.all() 
-     serializer_class = MenuItemSerializer
+#class SingleMenuItemView(generics.RetrieveUpdateAPIView,generics.DestroyAPIView):
+#     queryset = MenuItem.objects.all() 
+#     serializer_class = MenuItemSerializer
 
 
 class BookingViewSet(viewsets.ModelViewSet):
