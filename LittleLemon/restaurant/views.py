@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from rest_framework.decorators import api_view
-from .models import MenuItem
+#from .models import MenuItem
 from rest_framework import viewsets
-from.serializers import MenuItemSerializer
+#from.serializers import MenuItemSerializer
 from rest_framework.permissions import IsAuthenticated
-from .serializers import BookingSerializer, MenuSerializer
+from .serializers import BookingSerializer
 from .models import Booking, Menu
 
 
@@ -29,5 +29,6 @@ def sayHello(request):
 
 class BookingViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
-    
     queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+    
