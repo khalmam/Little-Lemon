@@ -40,7 +40,14 @@ INSTALLED_APPS = [
     'restaurant',
     'rest_framework',
     'rest_framework.authtoken',
+    'djoser', 
 ]
+
+# djoser library settings
+DJOSER = {
+    "USER_ID_FIELD" : "username"
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
